@@ -1,14 +1,15 @@
 package notepad_gav;
 
 public class Person_result {
-private static  int caunt = 0;
-   private int id;         //id dlja dostupa peremenih
+    private static int caunt = 0;
+    private int id;         //id dlja dostupa peremenih
     private String name;    //private ->otnositsja dlja id
     private String surname;//// prinadlezit objectu
     private String phone;
+    private String mail;
 
     public Person_result() {
-    //    id= 10; //construktor s bolsoj bukvi,
+        //    id= 10; //construktor s bolsoj bukvi,
         caunt++;
         id = caunt; ////numirovanije idiek po oceredi
     }
@@ -17,7 +18,10 @@ private static  int caunt = 0;
     public int getId() {
         return id;
     }
-    public String getName() {        return name; }
+
+    public String getName() {
+        return name;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -29,8 +33,7 @@ private static  int caunt = 0;
         return surname;
     }
 
-    public void setSurname(String surname)
-    {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
@@ -51,5 +54,13 @@ private static  int caunt = 0;
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
                 '}' + caunt;
+    }
+
+    public string getMail() {
+        return mail;
+    }
+
+    public void setMail(mail) {
+        this.mail = mail;
     }
 }

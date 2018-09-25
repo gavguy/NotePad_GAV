@@ -23,7 +23,9 @@ public class Main {
                 case "list":
                     printlist();
                     break;
-                    case "delete"
+                case "delete":
+                    delete();
+                    break;
                 case "exit":
                 default:
                     System.out.println("it isnt a command");
@@ -31,6 +33,13 @@ public class Main {
 
             }
         }
+    }
+
+    private static void delete() {
+        for (Person_result p : personlist) {
+
+        }
+
     }
 
 
@@ -44,6 +53,9 @@ public class Main {
 
         System.out.println("ENTER PHONE");
         String phone = scanner.next();
+
+        System.out.println("ENTER EMAIl");
+        String mail = scanner.next();
 
         Person_result p = new Person_result();
         p.setName(name);/// persona ustonovi svojo imja
