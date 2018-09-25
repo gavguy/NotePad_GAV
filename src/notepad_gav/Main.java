@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static List<Person_result> personlist = new ArrayList<>();
@@ -18,8 +20,10 @@ public class Main {
                 case "create":
                     create();/// kakajato peremenaja
                     break;
+                case "list":
+                    printlist();
+                    break;
                 case "exit":
-                    return;
                 default:
                     System.out.println("it isnt a command");
 
@@ -49,4 +53,22 @@ public class Main {
 
         System.out.println(p);
     }
+
+    private static void printlist() {
+
+
+        for (Person_result p : personlist) {
+            System.out.println(p);
+
+        }
+
+
+
+
+    }
+
+
+
+
+
 }
