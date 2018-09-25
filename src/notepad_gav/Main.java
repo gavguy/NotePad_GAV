@@ -23,6 +23,7 @@ public class Main {
                 case "list":
                     printlist();
                     break;
+                    case "delete"
                 case "exit":
                 default:
                     System.out.println("it isnt a command");
