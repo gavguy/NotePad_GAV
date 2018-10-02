@@ -53,14 +53,27 @@ public class Person_result {
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", phone='" + phone + '\'' +
-                '}' + caunt;
+                ", mail='" + mail + '\'' +
+                '}';
     }
 
-    public string getMail() {
+    public static int getCaunt() {
+        return caunt;
+    }
+
+    public static void setCaunt(int caunt) {
+        Person_result.caunt = caunt;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMail() {
         return mail;
     }
 
-    public void setMail(mail) {
+    public void setMail(String mail) {
         this.mail = mail;
     }
 }
