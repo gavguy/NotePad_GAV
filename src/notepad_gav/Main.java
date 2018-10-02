@@ -22,12 +22,15 @@ public class Main {
                     break;
                 case "createText":
                         createText();
+                        break;
                 case "list":
                     printlist();
                     break;
                 case "delete":
                     deletebyid();
-
+                    break;
+                case "find":
+                    find();
                     break;
                 case "help":
                     showHelp();
@@ -40,10 +43,22 @@ public class Main {
         }
     }
 
+    private static void find() {
+        System.out.println("FIND WHAT?");
+        String str = askString();
+        for (Record r : recordList) {
+            if (r.hasSubString(str)) {
+                System.out.println(r);
+            }
+
+        }
+    }
+
     private static void createText() {
         System.out.println("PLEASE, WRITE YOU'R TEXT");
-        String txt = askString();
+        String str = askString();
         Note note = new Note();
+        note.setText(str);
         recordList.add(note);
         System.out.println(note);
 
@@ -91,17 +106,15 @@ public class Main {
         System.out.println("ENTER PHONE");
         String phone = askString();
 
-        System.out.println("ENTER TEXT");
-        String text = askString();
-
         System.out.println("enter EMAIL");
         String mail = askString();
 
 
         Person_result p = new Person_result();
         p.setName(name);/// persona ustonovi svojo imja
-        p.setName(surname);
+        p.setSurname(surname);
         p.setPhone(phone);
+        p.setMail(mail);
 
         recordList.add(p);
 

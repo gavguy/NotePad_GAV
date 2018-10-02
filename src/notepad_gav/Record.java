@@ -10,6 +10,11 @@ public abstract class Record {
         id = caunt; ////numirovanije idiek po oceredi
     }
 
+    public abstract boolean hasSubString(String str); ///obstraknij metod - dlja personi svoj pois - dlja note sam iset... i obseje delaetsa
+
+
+
+
     public int getId() {
         return id;
     }

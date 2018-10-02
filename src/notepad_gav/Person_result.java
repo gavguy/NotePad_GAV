@@ -55,4 +55,12 @@ public class Person_result extends Record {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+    @Override
+    public boolean hasSubString(String str) {
+        return name.contains(str)
+                ||surname.contains(str)
+                ||phone.contains(str)
+                ||mail.contains(str);
+    }
 }

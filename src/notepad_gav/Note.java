@@ -20,5 +20,10 @@ public class Note extends Record {
                 "text='" + text + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean hasSubString(String str) {
+        return text.contains(str);
+    }
 }
 
