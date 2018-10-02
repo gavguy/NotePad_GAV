@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    static List<Person_result> personlist = new ArrayList<>();
+    static List<Record> recordList = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -16,14 +16,18 @@ public class Main {
             System.out.println("enter comand and help");
             String cmd = scanner.next();
             switch (cmd) {
-                case "create":
-                    create();/// kakajato peremenaja
+                case "createperson":
+                case "cp":
+                    createPerson();/// kakajato peremenaja
                     break;
+                case "createText":
+                        createText();
                 case "list":
                     printlist();
                     break;
                 case "delete":
                     deletebyid();
+
                     break;
                 case "help":
                     showHelp();
@@ -36,6 +40,15 @@ public class Main {
         }
     }
 
+    private static void createText() {
+        System.out.println("PLEASE, WRITE YOU'R TEXT");
+        String txt = askString();
+        Note note = new Note();
+        recordList.add(note);
+        System.out.println(note);
+
+    }
+
     private static void showHelp() {
         System.out.println("create - bla bla bla bla");
         System.out.println("delete - bla bla bla bla");
@@ -46,10 +59,10 @@ public class Main {
     private static void deletebyid() {
         System.out.println("enter the id to remowe");
         int id = scanner.nextInt();
-        for (int i = 0; i < personlist.size(); i++) {
-            Person_result p = personlist.get(i);
+        for (int i = 0; i < recordList.size(); i++) {
+            Record p = recordList.get(i);
             if (id == p.getId()) {
-                personlist.remove(i);
+                recordList.remove(i);
                 break;
             }
         }
@@ -58,16 +71,16 @@ public class Main {
 //    private static void deletebyid() {
 //        System.out.println('enter the id to remowe');
 //        int id = scanner.nextInt();
-//        for (Person p : personlist) {
+//        for (Person p : recordList) {
 //            if (id == p.getId()) {
-//                personlist.remove(i);
+//                recordList.remove(i);
 //                break
 //            }
 //        }
 //    }
 
 
-    private static void create() {
+    private static void createPerson() {
 
         System.out.println("ENTER NAME");
         String name = askString();
@@ -78,6 +91,9 @@ public class Main {
         System.out.println("ENTER PHONE");
         String phone = askString();
 
+        System.out.println("ENTER TEXT");
+        String text = askString();
+
         System.out.println("enter EMAIL");
         String mail = askString();
 
@@ -87,7 +103,7 @@ public class Main {
         p.setName(surname);
         p.setPhone(phone);
 
-        personlist.add(p);
+        recordList.add(p);
 
         System.out.println(p);
     }
@@ -114,7 +130,7 @@ public class Main {
     private static void printlist() {
 
 
-        for (Person_result p : personlist) {
+        for (Record p : recordList) {
             System.out.println(p);
 
         }
