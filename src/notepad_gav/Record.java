@@ -12,10 +12,12 @@ public abstract class Record {
 
     public abstract boolean hasSubString(String str); ///obstraknij metod - dlja personi svoj pois - dlja note sam iset... i obseje delaetsa
 
-
+    public abstract void askQuestions();
 
 
     public int getId() {
         return id;
     }
+
+
 }

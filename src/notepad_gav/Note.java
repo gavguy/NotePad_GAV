@@ -25,5 +25,26 @@ public class Note extends Record {
     public boolean hasSubString(String str) {
         return text.contains(str);
     }
+
+    @Override
+    public void askQuestions() {
+        System.out.println("enter text");
+        text = Main.askString();
+    }
+
+    @Override
+    public void askQuestion() {
+        System.out.println("ENTER NAME");
+         name = Main.askString();
+
+        System.out.println("ENTER SURENAME");
+         surname = Main.askString();
+
+        System.out.println("ENTER PHONE");
+         phone = Main.askString();
+
+        System.out.println("enter EMAIL");
+         mail = Main.askString();
+    }
 }
 

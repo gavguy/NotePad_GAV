@@ -32,9 +32,9 @@ public class Main {
                 case "d":
                     deletebyid();
                     break;
-                case"createremandir":
-                case"cr":
-                        createreminder();
+                case "createremandir":
+                case "cr":
+                    createreminder();
                     break;
                 case "find":
                     find();
@@ -51,21 +51,14 @@ public class Main {
     }
 
     private static void createreminder() {
-            System.out.println("Enter reminder text");
-            String text = askString();
-            System.out.println("Enter reminder date");
-            String date = askString();
-            System.out.println("Enter reminder time");
-            String time = askString();
 
-            var reminder = new Reminder();
-            reminder.setText(text);
-            reminder.setDate(date);
-            reminder.setTime(time);
 
-            System.out.println(reminder);
-            recordList.add(reminder);
-        }
+        var reminder = new Reminder();
+        reminder.askQuestions();
+
+        System.out.println(reminder);
+        recordList.add(reminder);
+
 
     }
 
@@ -81,13 +74,15 @@ public class Main {
     }
 
     private static void createText() {
-        System.out.println("PLEASE, WRITE YOU'R TEXT");
-        String str = askString();
         Note note = new Note();
-        note.setText(str);
+        addrecord(note);
+
+    }
+
+    private static void addrecord(Record note) {
+        note.askQuestions();
         recordList.add(note);
         System.out.println(note);
-
     }
 
     private static void showHelp() {
@@ -120,7 +115,7 @@ public class Main {
 //    }
 
 
-    private static void createPerson() {
+    public static void createPerson() {
 
         System.out.println("ENTER NAME");
         String name = askString();
@@ -146,7 +141,7 @@ public class Main {
         System.out.println(p);
     }
 
-    private static String askString() {
+    public static String askString() { //public
         var result = new ArrayList<String>();
         var word = scanner.next();
         if (word.startsWith("\"")) {

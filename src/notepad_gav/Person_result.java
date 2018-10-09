@@ -1,11 +1,12 @@
 package notepad_gav;
 
-public class Person_result extends Record {
+public  class Person_result extends Record {
 
     private String name;    //private ->otnositsja dlja id
     private String surname;//// prinadlezit objectu
     private String phone;
     private String mail;
+private String hairColor;
 
 
     public String getName() {
@@ -61,6 +62,7 @@ public class Person_result extends Record {
         return name.contains(str)
                 ||surname.contains(str)
                 ||phone.contains(str)
-                ||mail.contains(str);
+                ||mail.contains(str)
+        ||hairColor.contains(str);
     }
 }

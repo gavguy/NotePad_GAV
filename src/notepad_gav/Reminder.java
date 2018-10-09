@@ -4,6 +4,19 @@ public class Reminder extends Note {
     private String date;
     private  String time;
 
+
+    @Override
+    public void askQuestions() {
+        super.askQuestions();
+
+        System.out.println("Enter reminder date");
+        date = askString();
+        System.out.println("Enter reminder time");
+        time = askString();
+
+
+    }
+
     @Override
     public boolean hasSubString(String str) {// super class klas
         return super.hasSubString(str)
