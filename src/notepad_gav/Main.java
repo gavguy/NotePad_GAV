@@ -20,14 +20,21 @@ public class Main {
                 case "cp":
                     createPerson();/// kakajato peremenaja
                     break;
-                case "createText":
-                        createText();
-                        break;
+                case "createtext":
+                case "ct":
+                    createText();
+                    break;
                 case "list":
+                case "l":
                     printlist();
                     break;
                 case "delete":
+                case "d":
                     deletebyid();
+                    break;
+                case"createremandir":
+                case"cr":
+                        createreminder();
                     break;
                 case "find":
                     find();
@@ -41,6 +48,25 @@ public class Main {
 
             }
         }
+    }
+
+    private static void createreminder() {
+            System.out.println("Enter reminder text");
+            String text = askString();
+            System.out.println("Enter reminder date");
+            String date = askString();
+            System.out.println("Enter reminder time");
+            String time = askString();
+
+            var reminder = new Reminder();
+            reminder.setText(text);
+            reminder.setDate(date);
+            reminder.setTime(time);
+
+            System.out.println(reminder);
+            recordList.add(reminder);
+        }
+
     }
 
     private static void find() {
@@ -65,12 +91,11 @@ public class Main {
     }
 
     private static void showHelp() {
-        System.out.println("create - bla bla bla bla");
-        System.out.println("delete - bla bla bla bla");
-        System.out.println("bla bla bla bla");
-        System.out.println("bla bla bla bla");
+        System.out.println("cp, ct, l, d, find, exit");
+
 
     }
+
     private static void deletebyid() {
         System.out.println("enter the id to remowe");
         int id = scanner.nextInt();
@@ -129,7 +154,7 @@ public class Main {
                 result.add(word);
                 if (word.endsWith("\'")) {
                     String str = String.join(" ", result);
-                    return str.substring(1, str.length()-1);
+                    return str.substring(1, str.length() - 1);
 
                 }
                 word = scanner.next();
